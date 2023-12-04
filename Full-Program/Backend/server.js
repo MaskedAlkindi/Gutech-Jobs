@@ -15,6 +15,12 @@ app.use(express.json());
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
 
 const verifyToken = (req, res, next) => {
     const token = req.headers['authorization'];
@@ -60,12 +66,7 @@ app.post('/sendemail', async (req, res) => {
 
 
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'Hajid',
-    password: 'GutechJobsByHajid',
-    database: 'reactproject'
-});
+
 // Signup Endpoint
 
 
