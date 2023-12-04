@@ -23,7 +23,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "Jost", sans-serif;
+    font-family: 'Kanit', sans-serif;
   }
   
   /*--------------------------------------------------------------
@@ -305,7 +305,15 @@ body {
     top: 15px;
     right: 15px;
   }
+  .large-button {
+    font-size: 20px; /* Larger font size */
+    padding: 15px 30px; /* Bigger button */
+    /* You can add more styles to customize the button's appearance */
+  }
   
+.text-center {
+  text-align: center; /* Centers the text */
+}
   .navbar-mobile ul {
     display: block;
     position: absolute;
@@ -389,16 +397,16 @@ body {
   
   #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 48px;
+    font-size: 70px;
     font-weight: 700;
     line-height: 56px;
-    color: #C8C8C8;
+    color: white;
   }
   
   #hero h2 {
-    color: rgba(255, 255, 255, 0.6);
+    color: whitesmoke;
     margin-bottom: 50px;
-    font-size: 24px;
+    font-size: 50px;
   }
   
   #hero .btn-get-started {
@@ -521,7 +529,7 @@ body {
   }
   
   .section-title h2 {
-    font-size: 32px;
+    font-size: 55px;
     
     font-weight: bold;
     text-transform: uppercase;
@@ -555,6 +563,8 @@ body {
   
   .section-title p {
     margin-bottom: 0;
+    font-family: 'Kanit', sans-serif;
+    font-size: 23px;
   }
   
   /*--------------------------------------------------------------
@@ -1094,7 +1104,7 @@ body {
   .team .member {
     position: relative;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 70px; /* Increased padding */
     border-radius: 5px;
     background: #fff;
     transition: 0.5s;
@@ -1103,7 +1113,7 @@ body {
   
   .team .member .pic {
     overflow: hidden;
-    width: 180px;
+    width: 250px; /* Increased width */
     border-radius: 50%;
   }
   
@@ -1116,13 +1126,13 @@ body {
   }
   
   .team .member .member-info {
-    padding-left: 30px;
+    padding-left: 40px; /* Increased padding */
   }
   
   .team .member h4 {
     font-weight: 700;
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 24px; /* Increased font size */
     color: white;
   }
   

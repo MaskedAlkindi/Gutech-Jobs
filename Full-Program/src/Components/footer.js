@@ -4,16 +4,10 @@ import { Card, Button, Container, Row, Col, Form, InputGroup, DropdownButton, Dr
 
 function Footer() {
   return (
-    <Container fluid className="text-white py-4" style={{ background: '#282828' }}>
-      <Row>
-        <Col>
-          <h5>Footer Content</h5>
-          <p>
-            Here you can use rows and columns to organize your footer content.
-          </p>
-        </Col>
-      </Row>
-      <hr />
+    <Container fluid className="text-white py-4" style={{ background: '#21262D' }}>
+     
+        
+      
       <Row>
         <Col md={6} className="text-md-left">
           <div>

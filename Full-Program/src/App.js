@@ -7,16 +7,16 @@ import Home from './Components/Home';
 import Jobs from './Components/Jobs';
 import ContactUs from './Components/Contactus';
 import AddJobs from './Components/AddJobs';
-import ViewJob from './Components/ViewJob';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+
+import Login from './AuthPages/Login';
+import Signup from './AuthPages/Signup';
 import AdminJobs from './Components/Admins/AdminJobs';
 import JobApplications from './Components/JobApplications';
 import JobApplication from './Users/JobApplication';
 import JobDetails from './Users/JobDetails';
 import MyApplications from './Users/MyApplications';
 import Footer from './Components/footer';
-
+import AdminSignup from './AuthPages/AdminSignup';
 function App() {
   return (
     <AuthProvider>
@@ -37,6 +37,7 @@ function AuthRoutes() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/adminsignup" element={<AdminSignup />} />
         <Route path="*" element={<Navigate replace to="/login" />} />
       </Routes>
     );
@@ -48,7 +49,7 @@ function AuthRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/view" element={<ViewJob />} />
+        
         <Route path="/add" element={<AddJobs />} />
         <Route path="/my-applications" element={<MyApplications />} />
        

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../AuthContext';
-import { Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './logins.css'
@@ -78,9 +78,9 @@ function Login() {
         
         <label>Password</label>
         <input type="password" name="password" value={credentials.password} onChange={handleChange} placeholder="Enter Your Password" required />
-        <button type="submit">Login</button>
+        <Button style = {{marginTop: 20}} variant="outline-light" type="submit">Login</Button>
         <p className="divider" ><span>Or</span></p>
-        <button onClick={() => handleSignUp()}>Sign Up</button>
+        <Button style = {{marginTop: 20}} variant="outline-light" onClick={() => handleSignUp()}>Sign Up</Button>
      
       </form>
     </div>

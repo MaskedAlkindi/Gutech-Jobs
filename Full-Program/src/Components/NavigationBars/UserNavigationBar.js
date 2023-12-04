@@ -10,7 +10,7 @@ function UserNavigationBar() {
     // Add any additional actions needed for logout, like redirecting
   };
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar style={{ backgroundColor: '#0D1117' }} variant="dark" expand="lg">
       <LinkContainer  style = {{ color: '#040D12' }}  to="/">
       <Navbar.Brand>
           <img
@@ -21,7 +21,7 @@ function UserNavigationBar() {
         </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse style = {{marginLeft: 10}} id="basic-navbar-nav">
         <Nav className="mr-auto">
           <NavDropdown title="Jobs" id="basic-nav-dropdown">
     

@@ -10,7 +10,7 @@ function AdminNavigationBar() {
     // Add any additional actions needed for logout, like redirecting
   };
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar style={{ backgroundColor: '#0D1117' }} variant="dark" expand="lg">
       <LinkContainer to="/">
         {/* Replace "Job Portal" with the logo */}
         <Navbar.Brand >

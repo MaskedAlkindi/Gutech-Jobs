@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useAuth } from '../AuthContext';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import PlanetBackground from '../assets/imgass/PlanetBackground.png'
 function MyApplications() {
   const { user } = useAuth(); // Get the current user from AuthContext
   const [applications, setApplications] = useState([]);
@@ -48,12 +49,12 @@ function MyApplications() {
     setSelectedApplicationId(null); // Reset the selected application ID
   };
   return (
-    <Container fluid className="bg-dark text-white py-3">
+    <Container fluid style={{backgroundColor: "#0D1117", backgroundImage: `url(${PlanetBackground})`, minHeight: '100vh', backgroundSize: 'cover', backgroundPosition: 'center'}}>
       <Row>
         {applications.length > 0 ? (
           applications.map(app => (
-            <Col key={app.application_id} md={4} className="mb-4">
-              <Card className="bg-secondary text-white">
+            <Col style = {{marginTop: 50}} key={app.application_id} md={4}>
+              <Card className="mb-4" bg="dark" text="light" style={{ width: '20rem' }}>
                 <Card.Img variant="top" src={app.personal_photo || 'default-image-url'} alt="Applicant" />
                 <Card.Body>
                   <Card.Title>{app.name}</Card.Title>
@@ -62,10 +63,10 @@ function MyApplications() {
                     <br />
                     Status: {app.status}
                   </Card.Text>
-                  <Button variant="primary" href={app.cv} target="_blank">
+                  <Button style = {{marginRight: 20}} variant="outline-primary" href={app.cv} target="_blank">
                   View CV
                 </Button>
-                  <Button variant="danger" onClick={() => handleDeleteClick(app.application_id)}>
+                  <Button variant="outline-danger" onClick={() => handleDeleteClick(app.application_id)}>
                   Delete
                 </Button>
                 

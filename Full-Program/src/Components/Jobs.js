@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Container, Row, Col, Form, InputGroup, DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import PlanetBackground from '../assets/imgass/PlanetBackground.png'
 function Jobs() {
   const [jobs, setJobs] = useState([]);
+  console.log(jobs);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('');
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ function Jobs() {
   });
 
   return (
-    <Container fluid className="text-white py-4" style={{ background: '#121212', minHeight: '100vh', color: 'white' }}>
+    <Container fluid className="text-white py-4" style={{backgroundColor: "#0D1117", backgroundImage: `url(${PlanetBackground})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh'}}>
       <Row className="justify-content-center mb-4">
         <Col md={8}>
           <InputGroup style={{backgroundColor: '#282828'}}>
@@ -75,12 +76,15 @@ function Jobs() {
                 <Card.Body>
                   <Card.Title>{job.title}</Card.Title>
                   <Card.Text>
-                    {job.description.substring(0, 100)}...
+                    {job.description.substring(0, 100)}...<br />
+                    Type: {job.type}<br />
+                    Salary: {job.salary}<br />
+                    Skills: {job.skills}<br />
                   </Card.Text>
-                
+                                  
 
                   
-                  <Button style = {{marginRight: 20}}variant="outline-primary" className="mr-2" onClick={() => handleReadMore(job.job_id)}>Read More</Button>
+                 
                   <Button variant="outline-success" onClick={() => handleApply(job.job_id)}>Apply</Button>
                   
                 </Card.Body>

@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate  } from 'react-router-dom';
-import { Container, Form, Button, Modal  } from 'react-bootstrap';
+import { Container, Form, Button, Modal, Card } from 'react-bootstrap';
 import { useAuth } from '../AuthContext';
 import firebaseapp from '../Firebase/firebase';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import sendEmail from '../Functions/SendEmail';
+
 function JobApplication() {
     const { jobId } = useParams();
     const navigate = useNavigate();
     const { user } = useAuth();
+    
+    const [job, setJob] = useState(''); // New state for job title
+
+    
     const [application, setApplication] = useState({
       name: '',
       email: '',
@@ -29,6 +35,14 @@ function JobApplication() {
       await uploadBytes(storageRef, file);
       return getDownloadURL(storageRef);
     };
+    useEffect(() => {
+      // Fetch job title
+      fetch(`http://localhost:3001/job/${jobId}`)
+        .then(response => response.json())
+       
+        .then(data => setJob(data)) // Assuming the title is a property of the returned object
+        .catch(error => console.error('Error fetching job title:', error));
+    }, [jobId]);
   
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -68,6 +82,13 @@ function JobApplication() {
     
         if (response.ok) {
           // Handle success - Navigate to /jobs
+          
+          const emailBody = `Dear Mr/Mrs ${application.name},
+          \nYou have successfully applied for the job: ${job.title}.
+          \n\nBest regards,\nGutech Jobs`;
+
+          await sendEmail('Successful Application', application.email, emailBody);
+
           navigate('/jobs');
           
         } else {
@@ -83,11 +104,12 @@ function JobApplication() {
         setLoading(false); // End loading
       }
     };
+    const defaultImage = "https://media.istockphoto.com/id/1354776457/vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo.jpg?s=612x612&w=0&k=20&c=w3OW0wX3LyiFRuDHo9A32Q0IUMtD4yjXEvQlqyYk9O4=";
 
   return (
-    <Container fluid data-theme={"dark"} className="text-white py-4" style={{ background: '#121212', minHeight: '100vh', color: 'white' }}>
+    <Container fluid data-theme={"dark"} className="text-white py-4" style={{ background: '#0D1117', minHeight: '100vh', color: 'white' }}>
       <div className='container341' style = {{width: 750}}>
-      <h1>Apply for Job ID: {jobId}</h1>
+      <h1>Apply for Job ID: {job.title || 'Loading...'}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>
@@ -109,10 +131,27 @@ function JobApplication() {
             <Form.Control type="file" name="cv" onChange={handleFileChange} />
           </Form.Group>
 
-        <Button variant="primary" type="submit" style = {{marginTop: 30}}>
+        <Button variant="outline-light" type="submit" style = {{marginTop: 30}}>
           Submit Application
         </Button>
       </Form>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <Modal show={loading} onHide={() => {}} centered>
           <Modal.Header>
             <Modal.Title>{loading ? 'Submitting Application...' : 'Response'}</Modal.Title>
@@ -124,7 +163,26 @@ function JobApplication() {
             {!loading && <Button variant="secondary" onClick={() => setLoading(false)}>Close</Button>}
           </Modal.Footer>
         </Modal>
+        <Card  style={{ height: '100%', width: "100%", marginTop: 20, backgroundColor: "#282828", color: "white"}}>
+                
+                <Card.Body>
+                  <Card.Title>{job.title}</Card.Title>
+                  <Card.Text>
+                    {job.description} ...<br />
+                    Type: {job.type}<br />
+                    Salary: {job.salary}<br />
+                    Skills: {job.skills}<br />
+                  </Card.Text>
+                                  
+
+                  
+                 
+                
+                  
+                </Card.Body>
+      </Card>
       </div>
+      
           
     </Container>
   );
