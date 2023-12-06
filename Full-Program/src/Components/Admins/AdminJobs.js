@@ -79,8 +79,21 @@ function AdminJobs() {
   };
 
   const handleUpdateJobChange = (e) => {
-    setSelectedJob({ ...selectedJob, [e.target.name]: e.target.value });
-  };
+    // Check if the changed field is 'salary'
+    if (e.target.name === 'salary') {
+        // Use a regular expression to allow only numbers
+        const salaryValue = e.target.value.replace(/[^0-9]/g, '');
+
+        // Convert the string to a number and check if it's greater than or equal to 0
+        if (Number(salaryValue) >= 0) {
+            // Update the salary if it passes the validation
+            setSelectedJob({ ...selectedJob, [e.target.name]: salaryValue });
+        }
+    } else {
+        // For all other fields, update normally
+        setSelectedJob({ ...selectedJob, [e.target.name]: e.target.value });
+    }
+};
 
   const handleUpdateJobSubmit = (e) => {
     e.preventDefault();

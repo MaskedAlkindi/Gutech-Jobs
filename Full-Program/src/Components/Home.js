@@ -4,7 +4,15 @@ import Footer from './footer';
 import Button from 'react-bootstrap/Button';
 import PlanetBackground from '../assets/imgass/PlanetBackground.png'
 import TeamBackground from '../assets/imgass/featured_bg.9b6eb15.png'
+import { useNavigate } from 'react-router-dom';
+
 function Home() {
+  const navigate = useNavigate();
+
+  const handlegetstarted = () => {
+        navigate("/jobs");
+  };
+
   return (
     <>
     <div className="" style={{backgroundColor: "#0D1117", minHeight: '100vh'}}>
@@ -26,6 +34,7 @@ function Home() {
                     }} 
                     variant="outline-light" 
                     className="large-button"
+                    onClick={handlegetstarted}
                 >
                     Get Started
                 </Button>
@@ -64,9 +73,9 @@ function Home() {
               />
             </div>
             <div className="member-info" >
-              <h4>Walter White</h4>
+              <h4>Hajid Alkindi</h4>
               <h7>Chief Executive Officer</h7>
-              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+              <p>Technology is a tool; its true power lies in how we use it to connect and create.</p>
               
             </div>
           </div>
@@ -79,18 +88,18 @@ function Home() {
           <div style = {{backgroundColor: "#21262D"}} className="member d-flex align-items-start">
             <div className="pic">
               <img
-                src="https://i1.sndcdn.com/artworks-4UMq2ND9JhqcIVNs-a3OkjQ-t500x500.jpg"
+                src="https://media.licdn.com/dms/image/D4D03AQHinWOBIBiriw/profile-displayphoto-shrink_200_200/0/1696209407137?e=1707350400&v=beta&t=EJ7DpIPK_Vd3IKIZFDr5Zx2M4zIWr-Ybb8DiW5erAxc"
                 className="img-fluid"
                 alt=""
               />
             </div>
             <div className="member-info">
-              <h4>Sarah Jhonson</h4>
-              <h7>Product Manager</h7>
+              <h4>Mike Hanna</h4>
+              <h7>Full-Stack Developer</h7>
   
         
               <p>
-                Aut maiores voluptates amet et quis praesentium qui senda para
+                   Adaptability and agility are not just market trends but survival traits.
               </p>
               
             </div>
@@ -100,15 +109,15 @@ function Home() {
           <div style = {{backgroundColor: "#21262D"}} className="member d-flex align-items-start">
             <div className="pic">
               <img
-                src="https://i.pinimg.com/736x/3f/87/c5/3f87c551e0abb19b09eae73236a56af6.jpg"
+                src="https://media.licdn.com/dms/image/D4D03AQFtNxZe1f9EaQ/profile-displayphoto-shrink_200_200/0/1694627909387?e=2147483647&v=beta&t=c-byhZ-j5YcaGltKyhm4rTTHr_FhM-0V313pb8Ycq6c"
                 className="img-fluid"
                 alt=""
               />
             </div>
             <div className="member-info">
-              <h4>William Anderson</h4>
-              <h7>CTO</h7>
-              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+              <h4>Abdullah Alriyami</h4>
+              <h7>Ai Specialist</h7>
+              <p>Data is the new oil, but without the right analytics, it's just crude.</p>
               
             </div>
           </div>
@@ -117,16 +126,16 @@ function Home() {
           <div style = {{backgroundColor: "#21262D"}} className="member d-flex align-items-start">
             <div className="pic">
               <img
-                src="https://i.pinimg.com/originals/2e/4f/f8/2e4ff89ea628446edb6f39d30f298875.jpg"
+                src="https://media.licdn.com/dms/image/D5603AQFZTY6c_eKvug/profile-displayphoto-shrink_200_200/0/1697055847963?e=2147483647&v=beta&t=rhkNVwEhFRb4R4BBcSFK4rsDkWy-Y52VTQUEQIGQqGc"
                 className="img-fluid"
                 alt=""
               />
             </div>
             <div className="member-info">
-              <h4>Amanda Jepson</h4>
-              <h7>Accountant</h7>
+              <h4>Sameer Khalil</h4>
+              <h7>Cyber Security Specialist</h7>
               <p>
-                Dolorum tempora officiis odit laborum officiis et et accusamus
+                  Innovation distinguishes between a leader and a follower.
               </p>
               
             </div>

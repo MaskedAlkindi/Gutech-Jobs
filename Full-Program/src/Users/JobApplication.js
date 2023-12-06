@@ -109,7 +109,7 @@ function JobApplication() {
   return (
     <Container fluid data-theme={"dark"} className="text-white py-4" style={{ background: '#0D1117', minHeight: '100vh', color: 'white' }}>
       <div className='container341' style = {{width: 750}}>
-      <h1>Apply for Job ID: {job.title || 'Loading...'}</h1>
+      <h1>Apply for Job: {job.title || 'Loading...'}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>

@@ -11,12 +11,12 @@ function Footer() {
       <Row>
         <Col md={6} className="text-md-left">
           <div>
-            &copy;{new Date().getFullYear()} Your Company Name. All Rights Reserved.
+            &copy;{new Date().getFullYear()} Hajid Alkindi (21-0099)
           </div>
         </Col>
         <Col md={6} className="text-md-right">
           <div>
-            Address: 123 Example Street, City, Country
+            Al Amerat, Born and Raised
           </div>
         </Col>
       </Row>

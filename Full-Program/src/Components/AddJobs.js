@@ -64,6 +64,16 @@ function AddJobs() {
       alert('Salary cannot be less than 0.');
       return;
     }
+    if (e.target.name === 'salary') {
+      // Regular expression to check if the input is numeric
+      const re = /^[0-9\b]+$/;
+  
+      // If the value is not numeric and not empty, return without updating
+      if (e.target.value  !== '' && !re.test(e.target.value )) {
+        alert('Salary must be a numeric value.');
+        return;
+      }
+    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 

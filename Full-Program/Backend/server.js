@@ -297,9 +297,6 @@ app.delete('/deletejob/:jobId', (req, res) => {
 });
 
 
-
-
-
 app.put('/update-application-status/:applicationId/:newStatus', (req, res) => {
     const { applicationId, newStatus } = req.params;
   
