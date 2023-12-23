@@ -25,13 +25,13 @@ The `Full-Program/Documentation` folder contains essential documentation for set
 ## Screenshots
 The application's user interface is showcased through various screenshots located in `Documentation\Screenshots`:
 
-![HomePage](Full-Program\Documentation\Screenshots\HomePage.png)
+![HomePage](Full-Program/Documentation/Screenshots/HomePage.png)
 *HomePage of the Gutech Jobs application.*
 
-![JobsPage](Full-Program\Documentation\Screenshots\JobsPage.png)
+![JobsPage](Full-Program/Documentation/Screenshots/JobsPage.png)
 *Display of the available job listings.*
 
-![NewJobPage](Full-Program\Documentation\Screenshots\NewJobPage.png)
+![NewJobPage](Full-Program/Documentation/Screenshots/NewJobPage.png)
 *Interface for employers to post new job vacancies.*
 
 ## Author and Ownership
