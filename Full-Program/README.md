@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Gutech Jobs Application 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+Gutech Jobs is a comprehensive job portal application created by Hajid Alkindi. It's designed to facilitate job seekers and employers in finding and posting jobs, respectively. The project is built using React for the frontend, Node.js for the backend, and integrates Firebase storage, SendGrid API, and MySQL database.
 
-## Available Scripts
+## Key Features
+- User-friendly interface for job seekers and employers.
+- Secure and reliable job posting and application system.
+- Real-time updates and notifications.
+- Admin account and User Account
 
-In the project directory, you can run:
+## Project Documentation
+The `Full-Program/Documentation` folder contains essential documentation for setting up and understanding the project:
+- `HowToRunBackend.md`: Instructions for setting up and running the backend.
+- `HowToRunFrontend.md`: Steps to set up and launch the frontend.
+- `React Project (Hajid Alkindi).pdf`: A detailed report of the project.
 
-### `npm start`
+## Technology Stack
+- **Frontend**: React
+- **Backend**: Node.js
+- **Database**: MySQL
+- **Storage**: Firebase Storage
+- **Email Service**: SendGrid API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
+The application's user interface is showcased through various screenshots located in `Documentation\Screenshots`:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![HomePage](Documentation\Screenshots\HomePage.png)
+*HomePage of the Gutech Jobs application.*
 
-### `npm test`
+![JobsPage](Documentation\Screenshots\JobsPage.png)
+*Display of the available job listings.*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![NewJobPage](Documentation\Screenshots\NewJobPage.png)
+*Interface for employers to post new job vacancies.*
 
-### `npm run build`
+## Author and Ownership
+- **Created by**: Hajid Alkindi
+- **Ownership**: All rights and intellectual property of the Gutech Jobs application are owned by Hajid Alkindi.
+- **More Information**: For further details, visit [Hajidalkindi.com](http://Hajidalkindi.com).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Conclusion
+Gutech Jobs is a robust platform designed to streamline the job search and posting process, leveraging modern technologies for an efficient and user-friendly experience. The comprehensive documentation provided facilitates easy setup and understanding of the project's intricacies.

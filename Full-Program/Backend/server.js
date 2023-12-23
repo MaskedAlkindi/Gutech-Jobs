@@ -1,6 +1,6 @@
 
 require("dotenv").config();
-console.log(process.env.TESTAPI);
+
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const mysql = require('mysql2');
@@ -43,8 +43,8 @@ app.post('/sendemail', async (req, res) => {
     const { to, subject, text } = req.body;
   
     const msg = {
-      to: to, // recipient
-      from: process.env.SENDER_EMAIL, // verified sender
+      to: to,
+      from: process.env.SENDER_EMAIL, 
       subject: subject,
       text: text,
     };
@@ -70,12 +70,12 @@ app.post('/sendemail', async (req, res) => {
 // Signup Endpoint
 
 
-const saltRounds = 10; // or another number you prefer
-// Admin Signup Endpoint
+const saltRounds = 10; 
+
 app.post('/admin-signup', (req, res) => {
     const { username, password, email } = req.body;
 
-    // First, check if the username or email already exists
+    
     db.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email], (err, results) => {
         if (err) {
             console.error(err);
@@ -87,7 +87,7 @@ app.post('/admin-signup', (req, res) => {
             return res.status(409).json({ error: 'Username or email already exists' });
         }
 
-        // Hash the password
+        // Hashing the password
         bcrypt.hash(password, saltRounds, (hashErr, hash) => {
             if (hashErr) {
                 console.error(hashErr);
@@ -149,18 +149,18 @@ app.post('/signup', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Query to find the user by username
+   
     db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Error logging in' });
         }
 
-        // Check if user exists
+       
         if (results.length > 0) {
             const user = results[0];
 
-            // Compare provided password with stored hashed password
+           
             bcrypt.compare(password, user.password, (error, isMatch) => {
                 if (error) {
                     console.error(error);
